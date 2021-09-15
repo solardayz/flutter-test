@@ -57,7 +57,18 @@ class MyPage extends StatelessWidget {
                     bottomLeft: Radius.circular(40.0),
                     bottomRight: Radius.circular(40.0),
                   )),
-            )
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey,
+              ),
+              title: Text('Home'),
+              onTap: () {
+                print('onTap');
+              },
+              trailing: Icon(Icons.add),
+            ),
           ],
         ),
       ),
