@@ -22,7 +22,7 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My First App'),
+        title: Text('냉방사 통합 결재 시스템'),
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: Colors.blue[200],
@@ -36,7 +36,7 @@ class MyPage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              print('shopping_bag click');
+              print('search click');
             },
           ),
         ],
@@ -46,8 +46,8 @@ class MyPage extends StatelessWidget {
           padding: EdgeInsets.zero, //맨위로 올라감
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('accountName'),
-              accountEmail: Text('accountEmail'),
+              accountName: Text('홍길동'),
+              accountEmail: Text('hong@krb.co.kr'),
               onDetailsPressed: () {
                 print('onDetailsPressed click');
               },
@@ -64,10 +64,48 @@ class MyPage extends StatelessWidget {
                 color: Colors.grey,
               ),
               title: Text('Home'),
+              // subtitle: Text('Main'),
+              dense: true,
               onTap: () {
                 print('onTap');
               },
-              trailing: Icon(Icons.add),
+              // trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.post_add_sharp,
+                color: Colors.grey,
+              ),
+              title: Text('결재예정'),
+              // subtitle: Text('Main'),
+              onTap: () {
+                print('결재예정');
+              },
+              // trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.approval,
+                color: Colors.grey,
+              ),
+              title: Text('미결재'),
+              // subtitle: Text('Main'),
+              onTap: () {
+                print('미결재');
+              },
+              // trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.approval_sharp,
+                color: Colors.grey,
+              ),
+              title: Text('완료결재'),
+              // subtitle: Text('Main'),
+              onTap: () {
+                print('완료결재');
+              },
+              // trailing: Icon(Icons.add),
             ),
           ],
         ),
