@@ -111,14 +111,46 @@ class MyPage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: FlatButton(
-          onPressed: () {
-            flutterToast();
-          },
-          child: Text('Toast'),
-          color: Colors.blue,
-        ),
+      body: Row(
+        children: [
+          Center(
+            child: TextButton(
+              style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(TextStyle(fontSize: 15.0)),
+                foregroundColor: MaterialStateProperty.all(Colors.red),
+              ),
+              onPressed: () {
+                flutterToast('TextButton');
+              },
+              child: Text('Toast'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(TextStyle(fontSize: 15.0)),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+                // backgroundColor: MaterialStateProperty.all(Colors.white),
+              ),
+              onPressed: () {
+                flutterToast('ElevatedButton');
+              },
+              child: Text('Toast'),
+            ),
+          ),
+          Center(
+            child: OutlinedButton(
+              style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(TextStyle(fontSize: 15.0)),
+                foregroundColor: MaterialStateProperty.all(Colors.red),
+              ),
+              onPressed: () {
+                flutterToast('OutlinedButton');
+              },
+              child: Text('Toast'),
+            ),
+          ),
+        ],
       ),
     );
     // body: Builder(builder: (BuildContext ctx) {
@@ -138,9 +170,9 @@ class MyPage extends StatelessWidget {
   }
 }
 
-void flutterToast() {
+void flutterToast(msg) {
   Fluttertoast.showToast(
-      msg: 'Toast Test',
+      msg: 'Toast $msg',
       gravity: ToastGravity.BOTTOM,
       backgroundColor: Colors.amber,
       fontSize: 20.0,
