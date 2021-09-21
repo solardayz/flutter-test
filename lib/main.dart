@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'login.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My First App',
       theme: ThemeData(backgroundColor: Colors.blue),
-      home: MyPage(),
+      // home: MyPage(),
+      home: Login(),
     );
   }
 }
