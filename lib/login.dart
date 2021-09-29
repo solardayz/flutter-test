@@ -73,9 +73,10 @@ class _LoginState extends State<Login> {
                             ButtonTheme(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  print('login');
-                                  if (controllerId == 'jhc' &&
-                                      controllerPw == 'A') {
+                                  print(
+                                      'login $controllerId.text  $controllerPw.text');
+                                  if (controllerId.text == 'jhc' &&
+                                      controllerPw.text == 'A') {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
