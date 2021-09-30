@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:myapp/login.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -53,7 +54,11 @@ class Dashboard extends StatelessWidget {
               // subtitle: Text('Main'),
               dense: true,
               onTap: () {
-                print('onTap');
+                print('Home');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
               // trailing: Icon(Icons.add),
             ),
