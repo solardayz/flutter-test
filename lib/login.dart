@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/dashboard.dart';
 
 class Login extends StatefulWidget {
@@ -114,16 +113,16 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-void flutterToast(msg) {
-  Fluttertoast.showToast(
-      msg: 'Toast $msg',
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.amber,
-      fontSize: 20.0,
-      textColor: Colors.black,
-      toastLength: Toast.LENGTH_SHORT);
-}
+//
+// void flutterToast(msg) {
+//   Fluttertoast.showToast(
+//       msg: 'Toast $msg',
+//       gravity: ToastGravity.BOTTOM,
+//       backgroundColor: Colors.amber,
+//       fontSize: 20.0,
+//       textColor: Colors.black,
+//       toastLength: Toast.LENGTH_SHORT);
+// }
 // void showSnackBar(BuildContext context){
 //   Scaffold.of(context).showSnackBar(
 //     SnackBar(content:
