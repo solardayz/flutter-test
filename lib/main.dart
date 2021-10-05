@@ -1,6 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
+import 'data/info.dart';
+import 'jsonTest.dart';
 import 'login.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'My First App',
       theme: ThemeData(backgroundColor: Colors.blue),
       // home: MyPage(),
-      home: Login(),
+      // home: Login(),
+      home: JsonTest(info: fetchInfo()),
     );
   }
 }
@@ -181,4 +187,14 @@ void flutterToast(msg) {
       fontSize: 20.0,
       textColor: Colors.black,
       toastLength: Toast.LENGTH_SHORT);
+}
+
+Future<Info> fetchInfo() async {
+  final response = await http.get('http://localhost:8090/cs/1');
+
+  if (response.statusCode == 200) {
+    return Info.fromJson(json.decode(response.body));
+  } else {
+    throw Exception('정보를 불러오는데 실패했습니다.');
+  }
 }
