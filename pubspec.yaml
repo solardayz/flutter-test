@@ -20,6 +20,14 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
+#  C:\flutter\bin\flutter.bat --no-color pub upgrade
+#  Resolving dependencies...
+#  The current Dart SDK version is 2.13.4.
+#
+#  Because myapp depends on http >=0.13.4 which requires SDK version >=2.14.0 <3.0.0, version solving failed.
+#  pub finished with exit code 1
+#  Process finished with exit code 1
+
 dependencies:
   flutter:
     sdk: flutter
