@@ -190,7 +190,7 @@ void flutterToast(msg) {
 }
 
 Future<Info> fetchInfo() async {
-  final response = await http.get('http://localhost:8090/cs/1');
+  final response = await http.get(Uri.parse('http://localhost:8090/cs/1'));
 
   if (response.statusCode == 200) {
     return Info.fromJson(json.decode(response.body));

@@ -28,6 +28,7 @@ class JsonTest extends StatelessWidget {
           child: FutureBuilder<Info>(
             future: info,
             builder: (context, snapshot) {
+              print(snapshot.hasData);
               if (snapshot.hasData) {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +45,7 @@ class JsonTest extends StatelessWidget {
                   ],
                 );
               } else if (snapshot.hasError) {
-                return Text("${snapshot.hasError}");
+                return Text("${snapshot.hasError} 에러 발생 ");
               }
               return CircularProgressIndicator();
             },
@@ -56,8 +57,8 @@ class JsonTest extends StatelessWidget {
 }
 
 Future<Info> fetchInfo() async {
-  final response = await http.get('http://localhost:8090/cs/1');
-
+  final response = await http.get(Uri.parse('http://localhost:8090/cs/1'));
+  print('${response.statusCode} 코드 ');
   if (response.statusCode == 200) {
     return Info.fromJson(json.decode(response.body));
   } else {
