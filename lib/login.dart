@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/dashboard.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
-
   @override
   _LoginState createState() => _LoginState();
 }
@@ -12,6 +10,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController controllerId = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
+
+  final List<String> _valueList = ['범양', '신성', '센추리', '녹색', '냉동'];
+  String _selectedValue = '범양';
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,9 @@ class _LoginState extends State<Login> {
                           child: Column(
                             children: [
                               TextField(
+                                onTap: () {
+                                  FocusScope.of(context).unfocus();
+                                },
                                 controller: controllerId,
                                 decoration:
                                     InputDecoration(labelText: 'Enter ID'),
@@ -103,6 +107,23 @@ class _LoginState extends State<Login> {
                             ],
                           ),
                         )),
+                  ),
+                  DropdownButton(
+                    value: _selectedValue,
+                    items: _valueList.map((value) {
+                      return DropdownMenuItem(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (newvalue) {
+                      setState(() {
+                        _selectedValue = newvalue as String;
+                      });
+                    },
                   ),
                 ],
               ),

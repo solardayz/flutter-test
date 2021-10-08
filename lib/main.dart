@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'My First App',
       theme: ThemeData(backgroundColor: Colors.blue),
       // home: MyPage(),
-      // home: Login(),
-      home: JsonTest(info: fetchInfo()),
+      home: Login(),
+      // home: JsonTest(info: fetchInfo()),
     );
   }
 }
