@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/dashboard.dart';
 
+import 'controller/loginInfo.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -60,7 +62,9 @@ class _LoginState extends State<Login> {
                             children: [
                               TextField(
                                 onTap: () {
-                                  FocusScope.of(context).unfocus();
+                                  FocusScopeNode currentFocus =
+                                      FocusScope.of(context);
+                                  print('아이디 ${currentFocus.hasFocus}');
                                 },
                                 controller: controllerId,
                                 decoration:
@@ -68,6 +72,14 @@ class _LoginState extends State<Login> {
                                 keyboardType: TextInputType.text,
                               ),
                               TextField(
+                                onTap: () {
+                                  FocusScopeNode currentFocus =
+                                      FocusScope.of(context);
+                                  print('패스워드 ${currentFocus.hasFocus}');
+                                  if (currentFocus.hasFocus == true) {
+                                    loginInfo(controllerId.text);
+                                  }
+                                },
                                 controller: controllerPw,
                                 decoration: InputDecoration(
                                     labelText: 'Enter Password'),
