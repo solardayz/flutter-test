@@ -114,6 +114,11 @@ class _LoginState extends State<Login> {
                                         fontWeight: FontWeight.bold,
                                         wordSpacing: 50.0),
                                   ),
+                                  style: ElevatedButton.styleFrom(
+                                      // primary: Colors.orangeAccent,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0))),
                                 ),
                               ),
                             ],
